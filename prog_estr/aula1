@@ -1,0 +1,129 @@
+/******************************************************************************
+
+Leia N números e apresente o maior deles. Não use vetor para armazenar
+os valores.
+
+*******************************************************************************/
+
+#include <stdio.h>
+
+void main()
+{
+    float num, maior;
+    int i, qtd;
+    
+    printf("quantos numeros quer digitar? ");
+    scanf("%d", &qtd);
+    
+    for(i=1; i<=qtd;i++){
+        printf("digite o %do numero: ", i);
+        scanf("%f", &num);
+        
+        if(i==1)
+            maior = num;
+            else{
+                if(num>maior)
+                    maior=num;
+            }
+    }
+    
+    printf("\nO maior valor digitado foi %f\n", maior);
+    printf("fim do programa");
+}
+
+/******************************************************************************
+
+Leia 10 números reais, usando um laço, armazene-os em um vetor. Depois,
+usando outro laço, percorra o vetor e mostre:
+a) o maior valor armazenado no vetor;
+b) a média dos valores armazenados no vetor.
+
+*******************************************************************************/
+
+#include <stdio.h>
+
+void main(){
+    float nums[10], maior, soma; /* nums[10] - criei um vetor com 10 posições */
+    int i;
+    const int n=10;
+    
+    for(i=0;i<n;i++){
+        printf("digite o %io elemento: ", i+1);
+        scanf("%f", &nums[i]);
+    }
+    
+    maior = soma = nums[0];
+    for(i=1;i<n;i++){
+        if(nums[i]>maior)
+            maior=nums[i];
+            soma += nums[i];
+    }
+    
+    printf("\no maior valor do vetor é %f\n", maior);
+    printf("a média é %f\n", soma/n);
+    printf("fim");
+}
+
+/******************************************************************************
+
+3. Faça um programa que possua um vetor denominado vetA que armazene 6
+números inteiros. O programa deve executar os seguintes passos:
+a) Atribua os seguintes valores a esse vetor: 1, 0, 5, -2, -5, 7.
+b) Armazene em uma variável inteira (simples) a soma entre os valores
+das posições vetA[0], vetA[1] e vetA[5] do vetor e mostre na tela
+esta soma.
+c) Modifique o vetor na posição 4, atribuindo a esta posição o valor
+100.
+d) Mostre na tela cada valor do vetor vetA, um em cada linha.
+
+*******************************************************************************/
+
+#include <stdio.h>
+
+void main(){
+    int vetA[6] = {1, 0, 5, -2, -5, -7};
+    int soma, i;
+    
+    soma = vetA[0]+vetA[1]+vetA[5];
+    
+    printf("soma = %i\n", soma);
+    
+    vetA[3] = 100;
+    
+    for(i=0;i<6;i++){
+        printf("%i\n", vetA[i]);
+    }
+    
+}
+
+/******************************************************************************
+
+5. Ler um conjunto de números reais, armazenando-o em vetor e calcular o
+quadrado dos componentes deste vetor, armazenando o resultado em outro
+vetor. Os conjuntos têm 10 elementos cada. Imprimir todos os conjuntos.
+
+*******************************************************************************/
+
+#include <stdio.h>
+#define n 10 /* define o valor n como 10*/
+#define fim printf ("fim do programa")
+
+void main(){
+    float vetor[n], qdrdd[n]; 
+    /* como definimos q n = 10, está dito aqui q os vetores tem 10 elementos */
+    int i;
+    
+    for(i=0;i<n;i++){
+        printf("digite o %io numero: ", i+1);
+        scanf("%f", &vetor[i]);
+    }
+    
+    for(i=0;i<n;i++){
+        qdrdd[i] = vetor[i]*vetor[i];
+    }
+    
+    printf("%f\n", vetor[i]);
+    printf("%f\n", qdrdd[i]);
+    
+    fim;
+}
